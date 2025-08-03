@@ -11,9 +11,6 @@
 {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        let confToken = "09bfec02-83da-4378-8cae-30826e190d42ff55a3bf-860d-4edd-833c-f3c1b9ef6957";
-
-        document.cookie = `confirmation_token=${confToken}; path=/;`;
         const connection = new signalR.HubConnectionBuilder()
             .withUrl('http://localhost:5149/rocketmoneyHub', {
                 transport: signalR.HttpTransportType.WebSockets,
@@ -34,7 +31,7 @@
             };
 
             // Create JS fetch POST request
-            fetch('http://localhost:5149/api/Authorization/authorize-by-token', {
+            fetch('http://localhost:5149/api/authorization/authorize-by-token', {
                 method: 'POST',
                    credentials: 'include',
                 headers: {
