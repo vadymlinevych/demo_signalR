@@ -9,10 +9,10 @@
 
 @section Scripts
 {
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/9.0.6/signalr.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         const connection = new signalR.HubConnectionBuilder()
-            .withUrl('http://localhost:5149/rocketmoneyHub', {
+            .withUrl('https://api-stage.rocketmoney.com.ua/rocketmoneyHub', {
                 transport: signalR.HttpTransportType.WebSockets,
                 fetch: (url, options) => {
                     options.credentials = 'include';
@@ -31,7 +31,7 @@
             };
 
             // Create JS fetch POST request
-            fetch('http://localhost:5149/api/authorization/authorize-by-token', {
+            fetch('https://api-stage.rocketmoney.com.ua/api/authorization/authorize-by-token', {
                 method: 'POST',
                    credentials: 'include',
                 headers: {
