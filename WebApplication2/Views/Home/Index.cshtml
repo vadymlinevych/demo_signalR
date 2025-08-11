@@ -47,7 +47,7 @@
                 console.error('Authorization failed:', error);
             });
         });
-
+         connection.on('RedirectClient', (model) => { });
         connection.start();
     </script>
 }
